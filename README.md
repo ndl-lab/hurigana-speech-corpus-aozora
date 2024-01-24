@@ -37,13 +37,17 @@ https://lab.ndl.go.jp/dataset/hurigana-speech-corpus-aozora.zip
 
 音声認識は、OpenAIが2022年に公開した高性能な音声認識モデルWhisperを使用しています。
 
+オープンソースとして公開されている[medium（外部サイト）](https://huggingface.co/openai/whisper-medium)及び[whisper-large（外部サイト）](https://huggingface.co/openai/whisper-large)をローカルサーバにダウンロードして処理を行っています。
+
 下記の11人の作家については「large-v2」のモデルを利用し、他の作家は「medium」のモデルを利用しました。
 
 夏目漱石、芥川竜之介、吉川英治、江戸川乱歩、山本周五郎、新美南吉、森鴎外、太宰治、谷崎潤一郎、中里介山、野村胡堂
 
 ### 2.2. フォルダ構成
 
-作家事のzipファイルを展開すると、例示する通り、著者ごと作品ごとに階層構造を有しています。
+作家毎のzipファイルを展開すると、例示する通り、著者ごと作品ごとに階層構造を有しています。
+
+「作品名」の下に「daisyフォルダー名」の階層があります。
 
 ```
 0 夏目漱石
