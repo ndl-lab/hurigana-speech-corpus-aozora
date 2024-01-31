@@ -15,8 +15,9 @@
 
 作家ごとにzipで圧縮されており、次のURLから取得可能です。
 
-https://lab.ndl.go.jp/dataset/hurigana-speech-corpus-aozora/aozora_work.zip
+https://lab.ndl.go.jp/dataset/hurigana-speech-corpus-aozora/aozora_work_part1.zip
 
+https://lab.ndl.go.jp/dataset/hurigana-speech-corpus-aozora/aozora_work_part2.zip
 
 収集した全作品の情報と作家ごとの情報については、本リポジトリの[all_works.csv](./all_works.csv)及び[作家毎の統計情報.csv](./作家毎の統計情報.csv)を参照してください。
 
