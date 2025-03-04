@@ -142,7 +142,7 @@ OpenAIの音声認識モデルWhisperを使用して構築を行いました。
 
 ## 5. 参考文献
 
-佐藤文一, 吉永直樹, and 喜連川優. "音声認識を用いた青空文庫振り仮名注釈付き音声コーパスの構築の試み." 言語処理学会第28回年次大会講演論文集, 2024.
+佐藤文一, 吉永直樹, and 喜連川優. "音声認識を用いた青空文庫振り仮名注釈付き音声コーパスの構築の試み." 言語処理学会第30回年次大会講演論文集, 2024.
 
 SATO, Fumikazu, et al. Building Large-Scale Japanese Pronunciation-Annotated Corpora for Reading Heteronymous Logograms. In: Proceedings of the Thirteenth Language Resources and Evaluation Conference. 2022. p.7113-7121.
 
