@@ -1,6 +1,12 @@
 # 青空文庫振り仮名注釈付き音声コーパス
 青空文庫及びサピエの音声デイジーデータから作成した振り仮名注釈付き音声コーパスのデータセット
 
+***2025年3月7日 ver.2を公開しました。***
+
+2024年1月31日に公開したver.1では重複タイトル有りの作品数が3,334点（データセットに含まれる総録音時間3,771時間）であったところ、ver.2では重複タイトル有りの作品数が3,632点（データセットに含まれる総録音時間は4,892時間）と拡大しています。
+
+ver.1の説明については[ver.1ブランチ](https://github.com/ndl-lab/hurigana-speech-corpus-aozora/tree/ver.1)を確認してください。
+
 ## 1.概要
 
 青空文庫振り仮名注釈付き音声コーパス（以下、「本コーパス」といいます。）は、著作権保護期間が満了している作品の次のデータを利用して作成しました。 
@@ -15,9 +21,9 @@
 
 作家ごとにzipで圧縮されており、次のURLから取得可能です。
 
-https://lab.ndl.go.jp/dataset/hurigana-speech-corpus-aozora/aozora_work_part1.zip
+https://lab.ndl.go.jp/dataset/hurigana-speech-corpus-aozora/ver2/aozora_work_part1.zip
 
-https://lab.ndl.go.jp/dataset/hurigana-speech-corpus-aozora/aozora_work_part2.zip
+https://lab.ndl.go.jp/dataset/hurigana-speech-corpus-aozora/ver2/aozora_work_part2.zip
 
 収集した全作品の情報と作家ごとの情報については、本リポジトリの[all_works.csv](./all_works.csv)及び[作家毎の統計情報.csv](./作家毎の統計情報.csv)を参照してください。
 
@@ -34,15 +40,11 @@ https://lab.ndl.go.jp/dataset/hurigana-speech-corpus-aozora/aozora_work_part2.zi
 
 等により、対応付けがうまくいかなかったためと考えられます。
 
-作品数（重複タイトル有り）は3,344点です。
+作品数（重複タイトル有り）は3,632点、収集できた録音時間は4,892時間です。
 
 音声認識は、OpenAIが2022年に公開した高性能な音声認識モデルWhisperを使用しています。
 
-オープンソースとして公開されている[medium（外部サイト）](https://huggingface.co/openai/whisper-medium)及び[whisper-large（外部サイト）](https://huggingface.co/openai/whisper-large)をローカルサーバにダウンロードして処理を行っています。
-
-下記の11人の作家については「large-v2」のモデルを利用し、他の作家は「medium」のモデルを利用しました。
-
-夏目漱石、芥川竜之介、吉川英治、江戸川乱歩、山本周五郎、新美南吉、森鴎外、太宰治、谷崎潤一郎、中里介山、野村胡堂
+オープンソースとして公開されている[whisper-large（外部サイト）](https://huggingface.co/openai/whisper-large)及び[whisper-large-v3-turbo（外部サイト）](https://huggingface.co/openai/whisper-large-v3-turbo)をローカルサーバにダウンロードして処理を行っています。
 
 ### 2.2. フォルダ構成
 
@@ -107,13 +109,14 @@ OpenAIの音声認識モデルWhisperを使用して構築を行いました。
 まず、音声デイジーのxmlデータの情報をもとに文単位に音声データを分割し音声認識を行った文単位のテキストデータと青空文庫のテキストの対応を取り、
 次に両者の文と、音声認識結果の複数の候補と、単語の読み辞書を用いて、読みを推定しています。
 
-詳細は、2024年3月に開催される「言語処理学会第30回年次大会（NLP2024）」において、「音声認識を用いた青空文庫振り仮名注釈付き音声コーパスの構築の試み」のタイトルで発表予定です。
+詳細は、2025年3月に開催される「言語処理学会第31回年次大会（NLP2025）」において、「プロンプトと複数の音声認識候補による青空文庫振り仮名注釈付き音声コーパスの再構築」のタイトルで発表予定です。
 
 
 ## 3.注意点等
 
 * 音声デイジーの朗読データには、句読点等の記号は発音されないため含まれませんが、音声認識結果にはWhisperが推測した句読点が挿入されています。
 * 青空文庫の送り仮名は現代仮名遣いと異なっているため、Whisperの音声認識の結果と差異があります。
+* 青空文庫の異体字は変換しています。
 * 本コーパスにおける振り仮名が正確でない場合があります。
 * 現時点では音素を取得できていません
 
@@ -139,13 +142,16 @@ OpenAIの音声認識モデルWhisperを使用して構築を行いました。
 
 ## 5. 参考文献
 
+佐藤文一, 吉永直樹, and 喜連川優. "音声認識を用いた青空文庫振り仮名注釈付き音声コーパスの構築の試み." 言語処理学会第30回年次大会講演論文集, 2024.
+
 SATO, Fumikazu, et al. Building Large-Scale Japanese Pronunciation-Annotated Corpora for Reading Heteronymous Logograms. In: Proceedings of the Thirteenth Language Resources and Evaluation Conference. 2022. p.7113-7121.
 
-大規模振り仮名注釈付きコーパスを用いた同形異音語の読み分類. 佐藤文一 , 吉永直樹 , 喜連川優. 言語処理学会第28回年次大会講演論文集, 2022.
+佐藤文一 , 吉永直樹 , 喜連川優. "大規模振り仮名注釈付きコーパスを用いた同形異音語の読み分類. " 言語処理学会第28回年次大会講演論文集, 2022.
 
 佐藤文一, 吉永直樹, and 喜連川優. "書誌データ・青空文庫・点字データを用いた振り仮名注釈付き日本語コーパスの構築." 情報処理学会第15回アクセシビリティ研究会 研究報告 2021年3月
 
 佐藤文一, 喜連川優. "事前学習済み BERT の単語埋め込みベクトルによる同形異音語の読み誤りの改善 情報処理学会第12回アクセシビリティ研究会 研究報告2020年3月
+
 
 これらのコーパスを利用して研究等を実施する場合には、上記の参考文献の論文を引用頂けますと幸いです。
 
